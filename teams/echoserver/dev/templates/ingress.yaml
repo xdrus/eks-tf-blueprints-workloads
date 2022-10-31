@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: riker-ingress
-  namespace: team-riker
+  namespace: echoserver
   annotations:
 {{ if eq .Values.spec.ingress.type "alb" }}  
     #rewrite does not exist yet in ALB

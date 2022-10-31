@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: skiapp-ingress
-  namespace: team-riker
+  namespace: echoserver
   annotations:
     alb.ingress.kubernetes.io/group.name: riker
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -10,7 +10,7 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     #alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
     #alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
-    alb.ingress.kubernetes.io/tags: Environment=dev,Team=Riker
+    alb.ingress.kubernetes.io/tags: Environment=dev,Team=echoserver
 spec:
   ingressClassName: alb
   rules:
